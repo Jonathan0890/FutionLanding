@@ -8,14 +8,7 @@ const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
-const whitelist = [
-    'http://localhost:3212',                  // para desarrollo local
-    'http://localhost:5173',                  // para desarrollo local
-    'http://localhost:3000',                  // para frontend local 
-    'http://frontend',                  // para frontend red
-    'https://creativastudio.onrender.com' ,      // producción en Render
-    'https://frontend-eight-weld-50.vercel.app' //nuevo de aqui viene el frontend
-];
+const whitelist = process.env.CORS_URLS.split(',').map(url => url.trim());
 
 // Middleware
 app.use(cors(
