@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: Coox-Pacheco/frontend-app:1.0
+    container_name: frontend-service
+    ports:
+      - "3212:80"
+    networks:
+      - app-network
+    restart: always
+
+  backend:
+    image: Coox-Pacheco/backend-app:1.0
+    container_name: backend-service
+    ports:
+      - "3195:3000"
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
+    restart: always
+
+networks:
+  app-network:
+    driver: bridge
