@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Estilos personalizados */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Transiciones */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover para tarjetas */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay para portafolio */
+.portfolio-item .overlay {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
